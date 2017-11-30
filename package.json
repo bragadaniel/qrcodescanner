@@ -1,8 +1,8 @@
 {
   "name": "QRCodeApp",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Daniel O. Braga <daniel_oliveira0@Hotmail.com>",
+  "homepage": "https://github.com/bragadaniel/qrcodescanner",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
