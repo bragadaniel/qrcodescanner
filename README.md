@@ -1,5 +1,5 @@
 ## Sample QRCode Generator and Scanner
-(*in development)
+(*in development MVP)
 
 Create with Ionic and Angular 4
 

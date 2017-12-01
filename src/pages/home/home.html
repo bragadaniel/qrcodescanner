@@ -1,20 +1,29 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      QR Code App
+      <h3>SGP - Beneficiados</h3>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-input type="text" placeholder="Please enter with text..." [(ngModel)]="qrData">
-    </ion-input>
-  </ion-item>
-  <button ion-button full icon-left (click)="createCode()">
-    <ion-icon name="barcode"></ion-icon>Create Code</button>
+  <!-- <ion-item> -->
+    <!-- <ion-input type="text" placeholder="Please enter with text..." [(ngModel)]="qrData">
+    </ion-input> -->
+  <!-- </ion-item> -->
+  <!-- <button ion-button full icon-left (click)="createCode()"> -->
+  <!-- <ion-icon name="barcode"></ion-icon>Create Code</button> -->
   <button ion-button full icon-left (click)="scanCode()" color="secondary">
-    <ion-icon name="qr-scanner"></ion-icon>Scan Code</button>
+    <ion-icon name="qr-scanner"></ion-icon>LER QRcode</button>
+
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+     {{ scannedCode }}
+    </ion-card-content>
+  </ion-card>
+
+  <button class="gr-beneficio" ion-button full icon-left (click)="scanCode()">
+    <ion-icon name="cloud-download" ></ion-icon>Gerar Benefícios</button>
 
   <ion-card *ngIf="createdCode">
     <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
@@ -23,9 +32,5 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="scannedCode">
-    <ion-card-content>
-      Result from Scan: {{ scannedCode }}
-    </ion-card-content>
-  </ion-card>
+
 </ion-content>
