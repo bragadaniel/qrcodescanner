@@ -8,21 +8,21 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  qrData = null;
-  createdCode = null;
   scannedCode = null;
 
   constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner) { }
 
-  createCode(){
-    this.createdCode = this.qrData;
-  }
   scanCode(){
     this.barcodeScanner.scan().then(barcodeData =>{
-      this.scannedCode = barcodeData.text;
+      // this.scannedCode = barcodeData.text;
+      this.scannedCode = JSON.parse(barcodeData.text);
     }, (err) =>{
       console.log('Error: ', err);
     });
+  }
+
+  gerarBeneficios(){
+    alert(this.scannedCode['name']);
   }
 
 }

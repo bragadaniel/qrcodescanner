@@ -7,30 +7,35 @@
 </ion-header>
 
 <ion-content padding>
-  <!-- <ion-item> -->
-    <!-- <ion-input type="text" placeholder="Please enter with text..." [(ngModel)]="qrData">
-    </ion-input> -->
-  <!-- </ion-item> -->
-  <!-- <button ion-button full icon-left (click)="createCode()"> -->
-  <!-- <ion-icon name="barcode"></ion-icon>Create Code</button> -->
-  <button ion-button full icon-left (click)="scanCode()" color="secondary">
+  <button class="scan-code" ion-button full icon-left (click)="scanCode()" color="dark">
     <ion-icon name="qr-scanner"></ion-icon>LER QRcode</button>
 
   <ion-card *ngIf="scannedCode">
     <ion-card-content>
-     {{ scannedCode }}
+      <h5>Nome do aluno: <strong>{{ scannedCode['name'] }}</strong></h5>
     </ion-card-content>
   </ion-card>
 
-  <button class="gr-beneficio" ion-button full icon-left (click)="scanCode()">
-    <ion-icon name="cloud-download" ></ion-icon>Gerar Benefícios</button>
-
-  <ion-card *ngIf="createdCode">
-    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+  <ion-card *ngIf="scannedCode">
     <ion-card-content>
-      <!-- <p>Value: {{ createdCode }}</p> -->
+      <h5>Material Disponível</h5>
+      <ul>
+        <li>Camisa</li>
+        <li>Bermuda</li>
+        <li>Chuteira</li>
+        <li>Bola</li>
+        <li>Mochila</li>
+      </ul>
     </ion-card-content>
+    <div class="btn-gr-beneficio">
+      <button class="gr-beneficio" ion-button full icon-left (click)="gerarBeneficios()">
+        <ion-icon name="cloud-download"></ion-icon>Gerar Benefícios</button>
+    </div>
   </ion-card>
-
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-footer>
