@@ -16,9 +16,8 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="scannedCode">
+  <ion-card>
     <ion-card-content>
-      <h5>Material Disponível</h5>
       <ul>
         <li>Camisa</li>
         <li>Bermuda</li>
@@ -27,11 +26,12 @@
         <li>Mochila</li>
       </ul>
     </ion-card-content>
-    <div class="btn-gr-beneficio">
-      <button class="gr-beneficio" ion-button full icon-left (click)="gerarBeneficios()">
-        <ion-icon name="cloud-download"></ion-icon>Gerar Benefícios</button>
-    </div>
   </ion-card>
+
+  <div *ngIf="scannedCode" class="btn-gr-beneficio">
+    <button #gr class="gr-beneficio" ion-button full icon-left (click)="gerarBeneficios()">
+      <ion-icon name="cloud-download"></ion-icon>Gerar Benefícios</button>
+  </div>
 
 </ion-content>
 
